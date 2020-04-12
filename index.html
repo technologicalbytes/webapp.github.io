@@ -6,14 +6,13 @@
 </head>
 <body>
  <input id="name">
- <button onclick="send">Send</button>
+ <button onclick="send()">Send</button>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
 
 <script>
-function send() {
-alert("Data send..!);
+
 var database = firebase.database();
 
   // Your web app's Firebase configuration
@@ -30,7 +29,7 @@ var database = firebase.database();
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
-  
+  function send() {
   
   firebase.database().ref("user").set({
     name:document.getElementById("name").value
