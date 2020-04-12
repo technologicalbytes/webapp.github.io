@@ -1,0 +1,46 @@
+<!Doctype html>
+<html>
+<head>
+
+
+</head>
+<body>
+ <input id="name">
+ <button onclick="send">Send</button>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+<script>
+function send() {
+alert("Data send..!);
+var database = firebase.database();
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDQ2LpzRm7B-qoWFk1OiHTMtr1dqeBfovA",
+    authDomain: "webapp-c9946.firebaseapp.com",
+    databaseURL: "https://webapp-c9946.firebaseio.com",
+    projectId: "webapp-c9946",
+    storageBucket: "webapp-c9946.appspot.com",
+    messagingSenderId: "623089398372",
+    appId: "1:623089398372:web:7ae42b41d5b8e6748c6571",
+    measurementId: "G-KRLDNS9SN3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  
+  
+  firebase.database().ref("user").set({
+    name:document.getElementById("name").value
+    
+  });
+
+
+}
+  
+</script>
+
+</body>
+</html>
