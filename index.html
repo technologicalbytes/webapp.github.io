@@ -31,11 +31,11 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 function send(){
-firebase.database().ref("user").set({
+firebase.database().ref("user").push().set({
 name: document.getElementById("name").value
 });
 
-
+alert("send");
 }
   
 </script>
