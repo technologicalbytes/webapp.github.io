@@ -7,11 +7,34 @@
 <body>
  <input id="name">
  <button onclick="send()">Send</button>
-<span id="span"></span>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
 
 <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBbtry7AcgjydHG9YPE0Mh_3Xg1TWDFOls",
+    authDomain: "webapp1-7e7ef.firebaseapp.com",
+    databaseURL: "https://webapp1-7e7ef.firebaseio.com",
+    projectId: "webapp1-7e7ef",
+    storageBucket: "webapp1-7e7ef.appspot.com",
+    messagingSenderId: "693998161640",
+    appId: "1:693998161640:web:7469c0b765770de89cc35d",
+    measurementId: "G-L4R8P0K52T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 function send(){
-document.getElementById("span").innerHTML=document.getElementById("name").value;
+firebase.database().ref("user").set({
+name: document.getElementById("name").value
+});
+
 
 }
   
